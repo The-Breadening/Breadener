@@ -26,6 +26,13 @@ const client: Client<boolean> = new Client({
   ],
 });
 
+client.allowedChannels = [
+  "1416897896141422784",
+  "1383807467875733704",
+  "1383492917498351667",
+  "1388275547754463342",
+];
+
 client.commands = new Collection<string, SlashCommand>();
 
 // This type name is fucking brilliant

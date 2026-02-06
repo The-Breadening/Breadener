@@ -5,6 +5,14 @@ export const slashCommandEvent: BotEvent = {
   type: Events.InteractionCreate,
   execute: async (interaction: Interaction) => {
     if (!interaction.isChatInputCommand()) return;
+    
+    if (!interaction.client.allowedChannelIds.includes(interaction.channelId)) {
+      await interaction.reply({
+        content: "Nuh-Uh, you cannot run this in this channel.",
+        flags: MessageFlags.Ephemeral,
+      });
+      return;
+    }
 
     const command: SlashCommand | undefined = interaction.client.commands.get(
       interaction.commandName,

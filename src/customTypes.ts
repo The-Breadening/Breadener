@@ -20,6 +20,7 @@ export type SlashCommand = {
   data: SlashCommandBuilder | SlashCommandOptionsOnlyBuilder; // there are multiple kinds of slashcommand builders
   execute: (interaction: ChatInputCommandInteraction) => void; // the function that runs when the slashcommand is being executed
   autocomplete?: (interaction: AutocompleteInteraction) => void; // optional autocomplete function
+  allowedChannels: readonly string[];
 };
 
 export const SlashCommandGuard = (object: object) =>
