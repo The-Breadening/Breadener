@@ -28,11 +28,12 @@ export const slashGetBreadenerLevel = new SlashCommand({
     }
 
     const user = interaction.options.getUser("user", true);
-    const db = await Deno.openKv(Deno.env.get("DATABASE_PATH"));
+    const db = await Deno.openKv();
     const infectionCount = (await db.get<number>([
       "infectionCounts",
       user.id,
     ])).value ?? 0;
+
     db.close();
 
     const index = Math.floor(Math.min(infectionCount, 48) / 12);

@@ -10,7 +10,7 @@ import { BotEvent } from "./types.ts";
 import { coolBanner } from "./utils.ts";
 
 const requiredKeys = [
-  "DATABASE_PATH",
+//  "DATABASE_PATH",
   "CLIENTID",
   "GUILDID",
   "TOKEN",

@@ -150,7 +150,7 @@ export const slashRegisterInfector = new SlashCommand({
     const infector = await interaction.guild!.members.fetch(
       interaction.options.getUser("infector", true).id,
     );
-    const db = await Deno.openKv(Deno.env.get("DATABASE_PATH"));
+    const db = await Deno.openKv();
     const { logMessageExtension, replyOptions } = await registerInfection(
       db,
       infector,
@@ -334,7 +334,7 @@ export const slashDeregister = new SlashCommand({
       return logMessageBase + "Location not permitted";
     }
 
-    const db = await Deno.openKv(Deno.env.get("DATABASE_PATH"));
+    const db = await Deno.openKv();
     const {
       logMessageExtension,
       replyOptions,
