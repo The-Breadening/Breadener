@@ -9,9 +9,7 @@
   },
   "imports": {
     "$src/": "./src/",
-    "$utils/": "./src/utils/",
     "$static/": "./static/",
-    "$events/": "./src/events/",
 
     "discord.js": "npm:discord.js@^14.25.1"
   },
@@ -35,7 +33,6 @@
     "useBraces": "whenNotSingleLine"
   },
   "deploy": {
-    "build": "deno run -A --unstable-kv --env-file=.env src/index.ts",
     "org": "killioiden",
     "app": "breadener"
   }

@@ -11,7 +11,9 @@ export const nonSlashCommandEvent = new BotEvent<Events.MessageCreate>({
     for (const nonSlashCommand of nonSlashCommands) {
       if (nonSlashCommand.match(message)) {
         const logMessage = await nonSlashCommand.execute(message);
-        console.log(`${new Date().toISOString()}\x1b[36m > \x1b[0m${logMessage}`);
+        console.log(
+          new Date().toISOString() + `\x1b[36m > \x1b[0m${logMessage}`,
+        );
       }
     }
   },
