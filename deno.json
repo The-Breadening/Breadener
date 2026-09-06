@@ -13,8 +13,6 @@
     "$static/": "./static/",
     "$events/": "./src/events/",
 
-    "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
-    "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
     "discord.js": "npm:discord.js@^14.25.1"
   },
   "lint": {
@@ -35,5 +33,9 @@
     "semiColons": true,
     "operatorPosition": "nextLine",
     "useBraces": "whenNotSingleLine"
+  },
+  "deploy": {
+    "org": "killioiden",
+    "app": "breadener"
   }
 }
