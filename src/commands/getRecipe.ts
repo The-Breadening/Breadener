@@ -4,7 +4,7 @@ import breadRecipies from "$static/breadRecipies.json" with {
 import { SlashCommandBuilder } from "discord.js";
 import { type BreadRecipe, SlashCommand } from "../types.ts";
 
-export function parseRecipe(breadType: string): BreadRecipe | null {
+function parseRecipe(breadType: string): BreadRecipe | null {
   const recipe = Object.entries(breadRecipies)
     .find(([name]) => name === breadType) as
       | [string, Omit<BreadRecipe, "name">]

@@ -35,6 +35,7 @@
     "useBraces": "whenNotSingleLine"
   },
   "deploy": {
+    "build": "deno run -A --unstable-kv --env-file=.env src/index.ts",
     "org": "killioiden",
     "app": "breadener"
   }
