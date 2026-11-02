@@ -1,6 +1,4 @@
-import breadRecipies from "$static/breadRecipies.json" with {
-  type: "json",
-};
+import breadRecipies from "$static/breadRecipies.json" with { type: "json" };
 import { SlashCommandBuilder } from "discord.js";
 import { type BreadRecipe, SlashCommand } from "../types.ts";
 
@@ -32,7 +30,6 @@ export const slashGetRecipe = new SlashCommand({
     );
     const logMessage =
       `${interaction.user.username} used /get-recipe <${requestedBreadType}>: `;
-
     const recipe = parseRecipe(requestedBreadType);
 
     if (!recipe) {

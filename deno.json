@@ -2,9 +2,9 @@
   "tasks": {
     "copy-dev": "cp ../Breadener-token/dev.env .env",
     "copy-prod": "cp ../Breadener-token/prod.env .env",
-    "prod": "deno run -A src/index.ts",
+    "prod": "deno run -A --unstable-kv --env-file src/index.ts",
     "prod-db": "rm daataabaasaa.db; deno run -A src/db.ts; deno run dev",
-    "dev": "deno run -A --unstable-kv --env-file=.env --watch src/index.ts",
+    "dev": "deno run -A --unstable-kv --env-file --watch src/index.ts",
     "dev-db": "rm daataabaasaa.db; deno run -A src/db.ts; deno run dev-watch"
   },
   "imports": {
@@ -34,6 +34,7 @@
   },
   "deploy": {
     "org": "killioiden",
-    "app": "breadener"
+    "app": "breadener",
+    "build": "deno bundle ./src/index.ts"
   }
 }

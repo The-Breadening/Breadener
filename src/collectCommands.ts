@@ -61,9 +61,9 @@ slashCommands.push(
 
 console.log(
   "\x1b[34mSlashCommands: \x1b[0m\n",
-  slashCommands,
+  slashCommands.map((command) => command.data.name),
   "\x1b[34mNonSlashCommands: \x1b[0m\n",
-  nonSlashCommands,
+  nonSlashCommands.map((command) => command.name),
 );
 
 export { nonSlashCommands, slashCommands };
